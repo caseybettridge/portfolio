@@ -1,17 +1,24 @@
 <template>
-  <div id="app">
+  <div id="app" class="site is-flex">
     <div class="nav-container">
       <custom-nav></custom-nav>
     </div>
     <div class="home-container">
       <home></home>
+      <about></about>
+      <work></work>
+      <contact></contact>
     </div>
+
   </div>
 </template>
 
 <script>
 import Home from './components/Home'
 import CustomNav from './components/Nav'
+import About from './components/About'
+import Work from './components/Work'
+import Contact from './components/Contact'
 
 export default {
   name: 'app',
@@ -21,13 +28,24 @@ export default {
   },
   components: {
     Home,
-    CustomNav
+    CustomNav,
+    About,
+    Work,
+    Contact
   }
 }
 </script>
 
 <style lang="scss">
- @import "/styles/font.scss";
+  @import "/styles/font.scss";
+  
+  @import "./../node_modules/bulma/bulma.sass";
+
+  $fa-font-path : "~@fortawesome/fontawesome-free/webfonts";
+  @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+  @import "~@fortawesome/fontawesome-free/scss/solid.scss";
+  @import "~@fortawesome/fontawesome-free/scss/regular.scss";
+  @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -35,7 +53,13 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     display: flex;
   }
-  .nav-container {
-    width: 400px;
+  .site {
+    @include touch {
+      flex-direction: column;
+    }
   }
+  .nav-container {
+    width: 300px;
+  }
+
 </style>

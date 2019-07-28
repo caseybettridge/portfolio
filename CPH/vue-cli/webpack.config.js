@@ -34,6 +34,10 @@ module.exports = {
         ],
       },
       {
+        test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+        use: "url-loader?limit=100000"
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
