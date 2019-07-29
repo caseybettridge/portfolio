@@ -5,9 +5,12 @@
 			<span class="headline"> Hello, I'm a UX developer</span>
 			<div class="salmon-line"></div>
 			<span class="description">
-				<p>I plan and conduct user research, take those insights and create user experience deliverables, work with stakeholders to design the experience and interface, and eventually build and maintain the frontend.</p> 
-				<p>This portfolio highlights examples in frontend development.</p>
-				<p class="construction"> &#9786; It's also under construction &#9786; </p>
+				<p>I plan and conduct user research, take those insights and create UX deliverables, work with stakeholders to design the experience and interface, and build and maintain the frontend.</p> 
+				<p>This portfolio highlights frontend development.</p>
+				<!-- <p class="construction"> &#9786; It's also under construction &#9786; </p> -->
+			</span>
+			<span class="elements">
+				<span> Research </span> + <span> Design UX </span> + <span> Design UI </span> + <span> Code </span>
 			</span>
 		</div>
 		<!-- <span class="long-arrow"><i class="fas fa-arrow-down"></i></span> -->
@@ -33,7 +36,7 @@ export default {
 @import "../styles/utils.scss";
 
 .home {
-	margin: 1rem;
+	margin: 3rem;
 	padding: 3rem;
 	position: relative;
 	display: flex;
@@ -49,7 +52,7 @@ export default {
 	@include touch {
 		position: absolute;
 	}
-}
+}	
 
 .text-container {
 	display: flex;
@@ -73,9 +76,25 @@ export default {
 	line-height: 1.3;
 }
 .description {
-	width: 550px;
+	font-family: 'Noto Serif JP', serif;
+	font-size: 0.9rem;
+	font-weight: 500;
+	width: 500px;
 	margin-top: 1.5rem;
-	line-height: 1.8;
+	line-height: 2;
+	p {
+		margin-top: 0.75rem;
+	}
+}
+.elements {
+	margin-top: 2rem;
+	span {
+		font-weight: 900;
+		margin: 0 1rem;
+	}
+	span:first-child {
+		margin-left: 0;
+	}
 }
 .salmon-line {
 	height: 7px;

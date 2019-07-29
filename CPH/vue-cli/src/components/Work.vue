@@ -11,6 +11,9 @@
           <p>Currently, I’m working on personalization features whichs allows users to select interests from a list, and curates their homepage view based on these preferences.</p>
         </div>
         <div class="open-button button is-small is-primary cursor-pointer">Open in new tab</div>
+        <div class="case-image">
+          <img src="../assets/css.svg" />
+        </div>
       </div>
     </div>
   </div>

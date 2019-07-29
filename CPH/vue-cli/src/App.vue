@@ -59,7 +59,8 @@ export default {
     }
   }
   .nav-container {
-    width: 300px;
+    width: 200px;
+    max-width: 200px;
   }
 
 </style>

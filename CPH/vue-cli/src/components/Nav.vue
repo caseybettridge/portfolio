@@ -4,9 +4,7 @@
       <div class="my-name">Casey Bettridge</div>
       <div class="salmon-line"></div>
       <div class="links is-flex is-hidden-touch">
-        <span class="cursor-pointer"> about </span>
-        <span class="cursor-pointer"> work </span>
-        <span class="cursor-pointer"> contact </span>
+        <span class="cursor-pointer" v-for="link in links" :key="link.name">  {{ link.name }} </span>
       </div>
     </div>
   </div>
@@ -15,21 +13,26 @@
 <script>
 const links = [
   {
-    name: 'about',
+    name: 'About',
     link: ''
   },
   {
-    name: 'work',
+    name: 'Work',
     link: ''
   },
   {
-    name: 'contact',
+    name: 'Contact',
     link: ''
   }
 
 ]
 
 export default {
+  data: function () {
+    return {
+      links
+    }
+  }
 
 }
 </script>

@@ -3,7 +3,7 @@
     <div class="page-title">About</div>
     <div class="subheader">Welcome to my portfolio</div>
     <div class="copy">
-      In my current role I predominantly code in JavaScript using Vue.JS, design wireframes in Sketch, and conduct user research in the field. I value having a multi-faceted role and love the pace of startup culture: deploying often while still maintaining clean code.    </div>
+      In my current role I code in JavaScript using Vue.JS, design wireframes in Sketch, and conduct user research in the field. I value having a multi-faceted role and love the pace of startups: deploying often while still maintaining clean code. </div>
     <div class="subheader">Tools I use</div>
     <div class="tools">
       <div class="tool" :class="tool.name" v-for="tool in tools" :key="tool.name">
