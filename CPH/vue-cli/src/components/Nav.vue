@@ -1,10 +1,12 @@
 <template>
   <div>
-    <div class="navigation">
-      <div class="my-name">Casey Bettridge</div>
-      <div class="salmon-line"></div>
-      <div class="links is-flex is-hidden-touch">
-        <span class="cursor-pointer" v-for="link in links" :key="link.name">  {{ link.name }} </span>
+    <div class="navigation is-flex">
+      <div class="my-name">
+        <router-link :to="{ name:'Home' , hash: '#app' }" class="cursor-pointer home"> Casey Bettridge </router-link>
+        <div class="salmon-line"></div>
+      </div>
+      <div class="links is-flex">
+        <router-link :to="{ name:'Home' , hash: link.hash }" class="cursor-pointer nav-link" v-for="link in links" :key="link.name">  {{ link.name }} </router-link>
       </div>
     </div>
   </div>
@@ -14,15 +16,18 @@
 const links = [
   {
     name: 'About',
-    link: ''
+    link: '/about',
+    hash: '#about'
   },
   {
     name: 'Work',
-    link: ''
+    link: '/work',
+    hash: '#work'
   },
   {
     name: 'Contact',
-    link: ''
+    link: '/contact',
+    hash: '#contact'
   }
 
 ]
@@ -41,31 +46,58 @@ export default {
 @import "../styles/utils.scss";
 
   .navigation {
+    flex-direction: column;
     position: fixed;
     height: 100%;
     padding: 2rem;
+    padding-top: 4rem;
     font-size: 0.85rem;
+    @include touch {
+      padding: 1rem;
+      height: inherit;
+      flex-direction: row;
+      background-color: white;
+      z-index: 5;
+      width: 100%;
+    }
   }
   .my-name {
     margin-bottom: 1rem;
     font-weight: bold;
     font-size: 1rem;
+    position: relative;
+    @include touch {
+      margin-bottom: 0;
+    }
   }
   .salmon-line {
     height: 3px;
     width: 20px;
     background-color: #FF8C69;
-    position: relative;
-    top: -0.5rem;
+    position: absolute;
+    bottom: -0.5rem;
   }
   .links {
     flex-direction: column;
     @include touch {
-      display: none;
+      flex-direction: row;
+      align-items: center;
     }
   }
   .links span {
     margin: 0.5rem 0;
+  }
+  .nav-link {
+    color: $dark;
+    @include touch {
+      margin: 0 1rem;
+    }
+  }
+  .nav-link:hover, .router-link-active {
+    color: $primary;
+  }
+  .home {
+    color: $dark;
   }
 
 </style>

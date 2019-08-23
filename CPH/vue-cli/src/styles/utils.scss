@@ -7,19 +7,19 @@ $primary: #FF8C69;
 }
 .section {
   padding: 3rem;
+  @include touch {
+    padding: 1rem;
+  }
 }
 .page-title {
   font-size: 7rem;
   font-weight: 900;
+  @include touch {
+    font-size: 3rem;
+  }
 }
 .subheader {
   color: $primary;
   font-size: 1.5rem;
   font-weight: 600;
-}
-.copy {
-  line-height: 1.7;
-  width: 600px;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
 }

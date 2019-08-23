@@ -5,11 +5,10 @@
     </div>
     <div class="home-container">
       <home></home>
-      <about></about>
-      <work></work>
-      <contact></contact>
+      <about id="about" ></about>
+      <work id="work"></work>
+      <contact id="contact"></contact>
     </div>
-
   </div>
 </template>
 
@@ -61,6 +60,17 @@ export default {
   .nav-container {
     width: 200px;
     max-width: 200px;
+    @include touch {
+      width: 100%;
+      max-width: 100%;
+      height: 4rem;
+    }
+  }
+  .home-container {
+    width: calc(100% - 200px);
+    @include touch {
+      width: 100%;
+    }
   }
 
 </style>
