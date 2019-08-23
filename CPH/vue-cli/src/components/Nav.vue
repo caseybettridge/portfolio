@@ -1,18 +1,27 @@
 <template>
   <div>
-    <div class="navigation is-flex">
-      <div class="my-name">
-        <router-link :to="{ name:'Home' , hash: '#app' }" class="cursor-pointer home"> Casey Bettridge </router-link>
-        <div class="salmon-line"></div>
+    <scrollactive
+      v-on:itemchanged="onItemChanged"
+      active-class="active"
+      :offset="80"
+      :duration="800"
+      bezier-easing-value=".5,0,.35,1"
+    >
+      <div class="navigation is-flex">
+        <div class="my-name">
+          <a href="#home" class="scrollactive-item cursor-pointer home"> Casey Bettridge </a>
+          <div class="salmon-line"></div>
+        </div>
+        <div class="links is-flex">
+          <a :href="link.hash" class="scrollactive-item cursor-pointer nav-link" v-for="link in links" :key="link.name">  {{ link.name }} </a>
+        </div>
       </div>
-      <div class="links is-flex">
-        <router-link :to="{ name:'Home' , hash: link.hash }" class="cursor-pointer nav-link" v-for="link in links" :key="link.name">  {{ link.name }} </router-link>
-      </div>
-    </div>
+    </scrollactive>
   </div>
 </template>
 
 <script>
+
 const links = [
   {
     name: 'About',
@@ -37,9 +46,15 @@ export default {
     return {
       links
     }
+  },
+  methods: {
+    onItemChanged(event, currentItem, lastActiveItem) {
+      // your logic
+      console.log('here')
+    }
   }
-
 }
+
 </script>
 
 <style lang="scss" scoped>

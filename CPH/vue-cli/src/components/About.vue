@@ -1,5 +1,5 @@
 <template>
-  <div div class="about section">
+  <div id="about" class="about section">
     <div class="page-title">About</div>
     <div class="subheader">Welcome to my website :)</div>
     <div class="copy">

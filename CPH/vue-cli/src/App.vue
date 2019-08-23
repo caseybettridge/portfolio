@@ -5,9 +5,9 @@
     </div>
     <div class="home-container">
       <home></home>
-      <about id="about" ></about>
-      <work id="work"></work>
-      <contact id="contact"></contact>
+      <about></about>
+      <work></work>
+      <contact></contact>
     </div>
   </div>
 </template>

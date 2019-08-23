@@ -1,5 +1,5 @@
 <template>
-	<div class="home is-flex">
+	<div id="home" class="home is-flex">
 		<div class="dog-gif"></div>
 		<div class="text-container">
 			<span class="headline"> Hello, I'm a frontend developer</span>
@@ -46,6 +46,7 @@ export default {
 	padding: 3rem;
 	position: relative;
 	display: flex;
+	max-width: 1200px;
 	justify-content: space-between;
 	border: 4px solid $primary;
 	@include touch {
