@@ -9,7 +9,7 @@
         <g>
             <use xlink:href="#circlePath" fill="none"/>
             <text fill="#000">
-              <textPath xlink:href="#circlePath">+  User Research  +  Design UX  +  Design UI  +  Code </textPath>
+              <textPath xlink:href="#circlePath"> Welcome to my portfolio website Welcome to my portfolio website </textPath>
             </text>
         </g>
     </svg>

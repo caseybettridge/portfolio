@@ -1,7 +1,6 @@
 <template>
   <div>
     <scrollactive
-      v-on:itemchanged="onItemChanged"
       active-class="active"
       :offset="80"
       :duration="800"
@@ -9,7 +8,7 @@
     >
       <div class="navigation is-flex">
         <div class="my-name">
-          <a href="#home" class="scrollactive-item cursor-pointer home"> Casey Bettridge </a>
+          <a href="#home" class="scrollactive-item cursor-pointer nav-link home"> Casey Bettridge </a>
           <div class="salmon-line"></div>
         </div>
         <div class="links is-flex">
@@ -25,32 +24,22 @@
 const links = [
   {
     name: 'About',
-    link: '/about',
     hash: '#about'
   },
   {
     name: 'Work',
-    link: '/work',
     hash: '#work'
   },
   {
     name: 'Contact',
-    link: '/contact',
     hash: '#contact'
   }
-
 ]
 
 export default {
   data: function () {
     return {
       links
-    }
-  },
-  methods: {
-    onItemChanged(event, currentItem, lastActiveItem) {
-      // your logic
-      console.log('here')
     }
   }
 }
@@ -108,10 +97,10 @@ export default {
       margin: 0 1rem;
     }
   }
-  .nav-link:hover, .router-link-active {
+  .nav-link:hover, .nav-link.active {
     color: $primary;
   }
-  .home {
+  .home, .home.active {
     color: $dark;
   }
 

@@ -1,46 +1,29 @@
 <template>
   <div id="work" class="work section">
     <div class="page-title">Work</div>
-    <div class="subheader">Projects I’ve been working on, sorted by most recent</div>
-    <div class="copy">
-      <div class="case">
-        <div class="case-title">new.engineering.com</div>
-        <div class="case-wrapper is-flex">
-          <div class="left">
-            <div class="case-copy">
-              <p>My team was given the task of taking engineering.com, a news site focused on topics relevatnt to professional engineers, and rebuilding it using existing ProjectBoard (see below) infrastructure based on Vue.js</p>
-              <p>Currently, I’m working on personalization features which allows users to select interests from a list, and curates their homepage view based on these preferences.</p>
-            </div>
-            <div class="open-button button is-small is-primary cursor-pointer" @click="engcomImages[0].link">Open in new tab</div>
+    <div class="subheader">Frontend development</div>
+    <div class="project" v-for="p in projects.list" :key="p.name">
+      <div class="project-title"> {{ p.name }} <i class="fas fa-pen"></i></div>
+      <div class="content-container is-flex">
+        <div class="project-wrapper is-flex">
+          <div class="objective">
+            <span class="sub-title"> Project </span>
+            <span class="copy"> {{ p.obj }} </span>
           </div>
-          <div class="right">
-            <div class="case-copy">
-              <p>I’ve contributed to many parts of new.engineering.com. On the homepage I implemented subcategories on the horizonal rows, dispatching calls from the store to fetch projects based on which tab a user is on. On the story page, I built the header which includes an image uploader, tag selector, and character counter.</p>
-            </div>
+          <div class="role">
+            <span class="sub-title"> Role </span>
+            <span class="copy"> {{ p.role }} </span>
           </div>
-        </div>
-        <div class="case-image">
-          <img :src="engcomImages[0].src" />
-        </div>
-      </div>
-      <div class="case">
-        <div class="case-title">ProjectBoard.ai</div>
-        <div class="case-wrapper is-flex">
-          <div class="left">
-            <div class="case-copy">
-              <p>My team was given the task of taking engineering.com, a news site focused on topics relevatnt to professional engineers, and rebuilding it using existing ProjectBoard (see below) infrastructure based on Vue.js</p>
-              <p>Currently, I’m working on personalization features which allows users to select interests from a list, and curates their homepage view based on these preferences.</p>
-            </div>
-            <div class="open-button button is-small is-primary cursor-pointer" @click="engcomImages[0].link">Open in new tab</div>
+          <div class="highlight">
+            <span class="sub-title"> Highlight </span>
+            <span class="copy"> {{ p.highlight }}</span>
           </div>
-          <div class="right">
-            <div class="case-copy">
-              <p>I’ve contributed to many parts of new.engineering.com. On the homepage I implemented subcategories on the horizonal rows, dispatching calls from the store to fetch projects based on which tab a user is on. On the story page, I built the header which includes an image uploader, tag selector, and character counter.</p>
-            </div>
+          <div class="tags">
+            <span class="tag" v-for="tag in p.tech" :key="tag"> {{ tag }} </span>
           </div>
         </div>
-        <div class="case-image">
-          <img :src="engcomImages[0].src" />
+        <div class="project-image">
+          <img :src="p.image" />
         </div>
       </div>
     </div>
@@ -49,18 +32,12 @@
 </template>
 
 <script>
-const engcomImages = [
-  {
-    name: 'engcom',
-    src: './src/assets/engcom.svg',
-    link: 'http://new.engineering.com'  
-  }
-]
+import projects from './projects.js'
 
 export default {
   data: function () {
     return {
-      engcomImages
+      projects
     }
   }
 }
@@ -68,38 +45,43 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/utils.scss";
+  .external {
+    font-size: 1rem;
+    height: 2rem;
+    width: 2rem;
+  }
+  .subheader {
+    margin-bottom: 3rem;
+  }
 
-  .case {
+  .project {
     margin-bottom: 5rem;
   }
-  .case-wrapper {
-    width: 100%;
-    @include touch {
-      flex-direction: column;
-    }
-    .left {
-      width: 50%;
-      @include touch {
-        width: 100%;
-      }
-    }
-    .right {
-      width: 50%;
-      @include touch {
-        width: 100%;
-      }
+  .project-wrapper {
+    width: 40%;
+    max-width: 600px;
+    flex-direction: column;
+    margin-right: 3rem;
+    div {
+      margin-bottom: 1.5rem;
     }
   }
-  .case-title {
-    font-size: 1.2rem;
-    font-weight: 900;
+  .project-title {
+    font-size: 2rem;
     margin: 1rem 0;
   }
-  .case-copy {
+  .sub-title {
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: $grey;
+    font-weight: 900;
+  }
+  .copy {
     line-height: 1.7rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding-right: 3rem;
-    font-family: 'Noto Serif JP', serif;
     p {
       margin-bottom: 1rem;
     }
@@ -109,12 +91,15 @@ export default {
     font-weight: 600;
     margin: 1rem 0;
     padding: 1rem 1.5rem;
+    max-width: 200px;
   }
-  .case-image {
-    margin-top: 2rem;
-    width: 100%;
+  .project-image {
+    width: 800px;
+    @include desktop {
+    }
     img {
-      width: 100%;
+      box-shadow: 0 5px 28px 0 rgba(0,0,0,0.50);
+      border-radius: 5px;
     }
   }
 
