@@ -11,8 +11,7 @@
 				<p>I’m an interdisciplinary frontend developer with 3.5 years experience with a focus on UX. In my current role I predominantly code in Vue.JS, SCSS + HTML, design wireframes in Sketch, and conduct user research in the field. I enjoy working on ambitious web projects with other like-minded individuals.</p> 
 				<p>In my spare time, I play bass in a <a href="https://hermeticorderofthegrouphug.bandcamp.com/releases" target="_blank">punk band</a> and tend to my collection of houseplants.</p> 
 				<scrollactive><a href="#about" class="scrollactive-item">
-					<div class="button is-primary is-hidden-touch">About</div>
-					<div class="button is-primary is-hidden-desktop">Learn More</div></a>
+					<div class="button is-primary">Tell Me More</div></a>
 				</scrollactive>
 			</span>
 		</div>
@@ -56,6 +55,10 @@ export default {
 	}
 	@include desktop {
 		margin-left: 0;
+		padding: 3rem;
+	}
+	@include widescreen {
+		padding: 4rem;
 	}
 	@include fullhd {
 	}
@@ -112,10 +115,10 @@ export default {
 		top: -3rem;
 	}
 	@include desktop {
-		padding: 0.5rem 2rem;
+		padding: 0.5rem 0 0.5rem 2rem;
 	}
 	@include widescreen {
-		padding: 1rem 2rem;
+		padding: 1rem 1rem 1rem 2rem;
 	}
 	@include fullhd {
 		padding: 0.5rem 1rem;
@@ -178,22 +181,23 @@ export default {
 }
 .description {
 	font-family: 'Noto Serif JP', serif;
-	font-weight: 500;
 	line-height: 1.75;
-	max-width: 650px;
+	max-width: 620px;
 	margin-top: 0.5rem;
 	@include touch {
 		width: 100%;
+		line-height: 2;
 	}
 	@include desktop {
-		font-size: 0.8rem;
-		line-height: 1.75;
+		font-size: 0.85rem;
+		line-height: 2;
 	}
 	@include widescreen {
 		font-size: 0.85rem;
+		line-height: 1.95;
 	}
 	@include fullhd {
-		font-size: 0.9rem;
+		font-size: 0.95rem;
 		line-height: 2;
 		margin-top: 1.5rem;
 	}

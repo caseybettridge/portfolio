@@ -2,7 +2,7 @@
   <div id="about" class="about section">
     <div class="page-title">About</div>
     <div class="skills">
-      <div class="subheader">Key Skills</div>
+      <div class="subheader">Skills</div>
       <div class="copy">Some of the tools I use everyday in my tech stack.</div>
       <div class="tools is-flex">
         <div class="tool is-flex" v-for="tool in tools" :key="tool.name">
@@ -12,12 +12,12 @@
       </div>
     </div>
     <div class="Timeline">
-      <div class="subheader">Past Roles</div>
+      <div class="subheader">Timeline</div>
       <div class="copy">Here's an overview of my journey to where I am today. I've had the fortune of working with some amazing teams. </div>
       <div class="node" v-for="node in timeline.list" :key="node">
         <span class="date"> {{ node.date }} </span>
         <span class="role"> {{ node.role }} </span>
-        <span class="company"> {{ node.company }} <span class="location"> {{ node.location }} </span></span>
+        <a :href="node.link" target="_blank"><span class="company"> {{ node.company }}<span class="location"> {{ node.location }} </span></span></a>
       </div>
     </div>
   </div>
@@ -87,7 +87,6 @@ export default {
    align-items: center;
    @include touch {
      flex-wrap: wrap;
-     justify-content: space-between;
    }
   }
   .tool {
@@ -98,9 +97,8 @@ export default {
     width: 4rem;
     margin-right: 1rem;
     @include touch {
-      height: 3rem;
-      width: 3rem;
-      margin: 0.25rem;
+      margin-right: 2rem;
+      margin-top: 1rem;
     }
   }
   .copy {
@@ -130,12 +128,13 @@ export default {
     }
     .role {
       // font-weight: 500;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       margin: 0.2rem 0;
     }
     .company {
       font-size: 0.85rem;
       font-weight: 900;
+      color: $dark;
     }
     .location {
       font-weight: 400;

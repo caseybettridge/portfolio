@@ -1,32 +1,33 @@
 <template>
   <div id="work" class="work section">
     <div class="page-title">Work</div>
-    <div class="subheader">Frontend development</div>
-    <div class="project" v-for="p in projects.list" :key="p.name">
-      <div class="project-title"> {{ p.name }} <i class="fas fa-pen"></i></div>
-      <div class="content-container is-flex">
-        <div class="project-wrapper is-flex">
-          <div class="objective">
-            <span class="sub-title"> Project </span>
-            <span class="copy"> {{ p.obj }} </span>
-          </div>
-          <div class="role">
-            <span class="sub-title"> Role </span>
-            <span class="copy"> {{ p.role }} </span>
-          </div>
-          <div class="highlight">
-            <span class="sub-title"> Highlight </span>
-            <span class="copy"> {{ p.highlight }}</span>
-          </div>
-          <div class="tags">
-            <span class="tag" v-for="tag in p.tech" :key="tag"> {{ tag }} </span>
-          </div>
+    <div class="subheader">Highlights from the past two years</div>
+    <div class="project is-flex" v-for="p in projects.list" :key="p.name">
+      <div class="project-wrapper is-flex">
+        <div class="project-title is-flex"> <a :href="p.link" target="blank">{{ p.name }} </a></div>
+        <div class="objective">
+          <span class="sub-title"> Project </span>
+          <span class="copy"> {{ p.obj }} </span>
         </div>
-        <div class="project-image">
-          <img :src="p.image" />
+        <div class="role">
+          <span class="sub-title"> Role </span>
+          <span class="copy"> {{ p.role }} </span>
+        </div>
+        <div class="highlight">
+          <span class="sub-title"> Highlight </span>
+          <span class="copy"> {{ p.highlight }}</span>
+        </div>
+        <div class="tags">
+          <span class="tag" v-for="tag in p.tech" :key="tag"> {{ tag }} </span>
         </div>
       </div>
+      <div class="project-image">
+        <a :href="p.link" target="blank">
+          <img class="cursor-pointer" :src="p.image" />
+        </a>
+      </div>
     </div>
+    <!-- <div class="button is-primary open-button is-small">Open in New Tab</div> -->
   </div>
 
 </template>
@@ -45,30 +46,46 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/utils.scss";
-  .external {
-    font-size: 1rem;
-    height: 2rem;
-    width: 2rem;
-  }
   .subheader {
     margin-bottom: 3rem;
+    @include touch {
+      margin-bottom: 1rem;
+    }
   }
-
   .project {
     margin-bottom: 5rem;
+    align-items: center;
+    @include touch {
+      flex-direction: column;
+    }
   }
   .project-wrapper {
     width: 40%;
     max-width: 600px;
     flex-direction: column;
     margin-right: 3rem;
+    @include touch {
+      width: 100%;
+      max-width: 100%;
+      margin-right: 0;
+    }
     div {
       margin-bottom: 1.5rem;
     }
   }
   .project-title {
     font-size: 2rem;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
+    align-items: center;
+    @include touch {
+      font-size: 1.5em;
+    }
+    a {
+      color: $dark;
+    }
+  }
+  .project-title:hover a{
+    color: $primary;
   }
   .sub-title {
     text-transform: uppercase;
@@ -86,16 +103,16 @@ export default {
       margin-bottom: 1rem;
     }
   }
-  .open-button {
-    color: white;
-    font-weight: 600;
-    margin: 1rem 0;
-    padding: 1rem 1.5rem;
-    max-width: 200px;
-  }
+  // .open-button {
+  //   margin-left: 1rem;
+  //   padding: 0.75rem 1rem;
+  //   max-width: 150px;
+  // }
   .project-image {
     width: 800px;
-    @include desktop {
+    @include touch {
+      width: 100%;
+      margin-top: 1.5rem;
     }
     img {
       box-shadow: 0 5px 28px 0 rgba(0,0,0,0.50);
