@@ -13,7 +13,7 @@
     </div>
     <div class="Timeline">
       <div class="subheader">Timeline</div>
-      <div class="copy">Here's an overview of my journey to where I am today. I've had the fortune of working with some amazing teams. </div>
+      <div class="copy">Here's an overview of my journey to where I am today. I've had the fortune of working with some amazing teams. In entrepreneurship, engineering, branding, strategy, and digital services.</div>
       <div class="node" v-for="node in timeline.list" :key="node">
         <span class="date"> {{ node.date }} </span>
         <span class="role"> {{ node.role }} </span>
@@ -34,6 +34,10 @@ const tools = [
   {
     name: 'js',
     src: './src/assets/js.svg'
+  },
+  {
+    name: 'bulma',
+    src: './src/assets/bulma.svg'
   },
   { 
     name: 'css',

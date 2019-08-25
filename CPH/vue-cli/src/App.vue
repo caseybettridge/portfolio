@@ -1,9 +1,9 @@
 <template>
-  <div id="app" class="site is-flex">
-    <div class="nav-container">
+  <div id="app" class="site is-flex custom-cursor">
+    <div class="nav-container custom-cursor">
       <custom-nav></custom-nav>
     </div>
-    <div class="home-container">
+    <div class="home-container custom-cursor">
       <home></home>
       <about></about>
       <work></work>
@@ -71,6 +71,9 @@ export default {
     @include touch {
       width: 100%;
     }
+  }
+  .custom-cursor {
+    cursor: url('/assets/favicon.png'), auto;
   }
 
 </style>
