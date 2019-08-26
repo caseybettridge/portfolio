@@ -29,7 +29,7 @@ export default {
 @import "../styles/utils.scss";
 
 .contact {
-  margin-bottom: 20rem;
+  margin-bottom: 25rem;
   @include mobile {
     margin-bottom: 10rem;
   }

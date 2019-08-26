@@ -58,6 +58,9 @@ export default {
     @include touch {
       flex-direction: column;
     }
+    @include desktop-only {
+      flex-direction: column;
+    }
   }
   .project-wrapper {
     width: 40%;
@@ -65,6 +68,11 @@ export default {
     flex-direction: column;
     margin-right: 3rem;
     @include touch {
+      width: 100%;
+      max-width: 100%;
+      margin-right: 0;
+    }
+    @include desktop-only {
       width: 100%;
       max-width: 100%;
       margin-right: 0;
@@ -113,6 +121,9 @@ export default {
     @include touch {
       width: 100%;
       margin-top: 1.5rem;
+    }
+    @include desktop-only {
+      width: 100%;
     }
     img {
       box-shadow: 0 5px 28px 0 rgba(0,0,0,0.50);

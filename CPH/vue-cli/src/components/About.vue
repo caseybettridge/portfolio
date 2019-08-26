@@ -4,16 +4,18 @@
     <div class="skills">
       <div class="subheader">Skills</div>
       <div class="copy">Some of the tools I use everyday in my tech stack.</div>
-      <div class="tools is-flex">
-        <div class="tool is-flex" v-for="tool in tools" :key="tool.name">
-          <img :src="tool.src" />
-          <div class="tag">{{ tool.name }}</div>
+      <div class="tools-wrapper is-flex">
+        <div class="tools is-flex">
+          <div class="tool is-flex" v-for="tool in tools" :key="tool.name">
+            <img :src="tool.src" />
+            <div class="tag">{{ tool.name }}</div>
+          </div>
         </div>
       </div>
     </div>
     <div class="Timeline">
       <div class="subheader">Timeline</div>
-      <div class="copy">Here's an overview of my journey to where I am today. I've had the fortune of working with some amazing teams. In entrepreneurship, engineering, branding, strategy, and digital services.</div>
+      <div class="copy">Here's an overview of my journey to where I am today. I've had the fortune of working with some amazing teams in entrepreneurship, engineering, branding, strategy, and digital services.</div>
       <div class="node" v-for="node in timeline.list" :key="node">
         <span class="date"> {{ node.date }} </span>
         <span class="role"> {{ node.role }} </span>
@@ -86,23 +88,30 @@ export default {
   .skills {
     margin-bottom: 4rem;
   }
+  .tools-wrapper {
+    @include touch {
+      width: 100%;
+      justify-content: center;
+    }
+  }
   .tools {
-   margin-top: 1rem; 
-   align-items: center;
-   @include touch {
-     flex-wrap: wrap;
-   }
+    align-items: center;
+    margin-top: 1rem; 
+    @include touch {
+      margin: 0 auto;
+      flex-wrap: wrap;
+      display: inline-block
+    }
   }
   .tool {
     flex-direction: column;
-    align-items: space-between;
     justify-content: space-between;
     height: 6.5rem;
     width: 4rem;
     margin-right: 1rem;
     @include touch {
-      margin-right: 2rem;
-      margin-top: 1rem;
+      margin: 1rem;
+      flex-basis: calc(25% - 2rem);
     }
   }
   .copy {
