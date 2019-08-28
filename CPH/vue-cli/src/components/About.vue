@@ -3,7 +3,7 @@
     <div class="page-title">About</div>
     <div class="skills">
       <div class="subheader">Skills</div>
-      <div class="copy">Some of the tools I use everyday in my tech stack.</div>
+      <div class="copy">Some of the tools I use everyday in my stack.</div>
       <div class="tools-wrapper is-flex">
         <div class="tools is-flex">
           <div class="tool is-flex" v-for="tool in tools" :key="tool.name">
