@@ -4,7 +4,7 @@
 		<div class="text-container is-flex">
 			<div class="headline-container is-flex">
 				<span class="headline"> Casey Bettridge </span>
-				<span class="sub">Frontend Developer + UX Designer</span>
+				<span class="sub">Frontend Developer</span>
 				<div class="salmon-line"></div>
 			</div>
 			<span class="description">
@@ -180,7 +180,6 @@ export default {
 
 }
 .description {
-	font-family: 'Noto Serif JP', serif;
 	line-height: 1.75;
 	max-width: 620px;
 	margin-top: 0.5rem;
