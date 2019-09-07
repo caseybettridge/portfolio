@@ -1,6 +1,10 @@
 <template>
 	<div id="home" class="home is-flex">
-		<div class="dog-gif"></div>
+		<div class="dog-vid">
+			<video loop muted autoplay poster="img/videoframe.jpg">
+				<source src="'../assets/giphy.mp4'" type="video/mp4">
+			</video>
+		</div>
 		<div class="text-container is-flex">
 			<div class="headline-container is-flex">
 				<span class="headline"> Casey Bettridge </span>
@@ -67,7 +71,7 @@ export default {
 	}
 }
 
-.dog-gif {
+.dog-vid {
 	height: 100%;
 	width: 100%;
 	max-width: 350px;
