@@ -129,7 +129,6 @@ export default {
 	justify-content: space-between;
 }
 .headline {
-	font-family: Avenir;
 	font-weight: 900;
 	line-height: 1.3;
 	@include mobile {
@@ -229,7 +228,6 @@ export default {
 
 .button {
 	padding: 1.25rem 3rem;
-	font-family: Avenir;
 	margin-top: 2rem;
 	border-radius: 0;
 }

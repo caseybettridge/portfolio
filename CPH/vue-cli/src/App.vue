@@ -36,7 +36,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "/styles/font.scss";
   
   @import "./../node_modules/bulma/bulma.sass";
 
