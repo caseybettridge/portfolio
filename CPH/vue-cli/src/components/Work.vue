@@ -27,7 +27,6 @@
         </a>
       </div>
     </div>
-    <!-- <div class="button is-primary open-button is-small">Open in New Tab</div> -->
   </div>
 
 </template>
