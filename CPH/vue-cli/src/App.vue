@@ -71,8 +71,5 @@ export default {
       width: 100%;
     }
   }
-  .custom-cursor {
-    cursor: url('/assets/favicon.png'), auto;
-  }
 
 </style>

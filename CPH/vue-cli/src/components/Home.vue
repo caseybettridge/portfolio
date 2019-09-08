@@ -1,7 +1,7 @@
 <template>
 	<div id="home" class="home is-flex">
 		<div class="dog-vid">
-			<video loop muted autoplay poster="img/videoframe.jpg" class="video">
+			<video loop muted autoplay class="video">
 				<source src="../assets/giphy.mp4" type="video/mp4">
 			</video>
 		</div>
