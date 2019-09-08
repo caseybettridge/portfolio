@@ -1,8 +1,8 @@
 <template>
 	<div id="home" class="home is-flex">
 		<div class="dog-vid">
-			<video loop muted autoplay poster="img/videoframe.jpg">
-				<source src="'../assets/giphy.mp4'" type="video/mp4">
+			<video loop muted autoplay poster="img/videoframe.jpg" class="video">
+				<source src="../assets/giphy.mp4" type="video/mp4">
 			</video>
 		</div>
 		<div class="text-container is-flex">
@@ -76,14 +76,12 @@ export default {
 	width: 100%;
 	max-width: 350px;
 	min-width: 250px;
-	background-image: url('https://media.giphy.com/media/5WISrfbvjH5xd6rJMq/giphy.gif');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position-y: 23%;
+	overflow: hidden;
 	@include touch {
 		margin-right: 0;
 		max-width: 100%;
 		min-height: 550px;
+		height: 550px;
 	}
 	@include desktop {
 		margin-right: 0;
@@ -102,6 +100,20 @@ export default {
 		min-width: 40%;
 		margin-right: 5rem;
 	}
+}
+.video {
+	width: 100%;
+	position: relative;
+	top: -5%;
+	@include touch {
+		top: -40%;
+	}
+	@include mobile {
+		top: -10%;
+	}
+	@media screen and (min-width: 1500px) {
+		top: -20%;
+	} 
 }	
 
 .text-container {
