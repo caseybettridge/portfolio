@@ -7,7 +7,7 @@
       <div class="tools-wrapper is-flex">
         <div class="tools is-flex">
           <div class="tool is-flex" v-for="tool in tools" :key="tool.name">
-            <img :src="tool.src" />
+            <img :src="tool.src" :alt="tool.name" />
             <div class="tag">{{ tool.name }}</div>
           </div>
         </div>
@@ -16,7 +16,7 @@
     <div class="Timeline">
       <div class="subheader">Timeline</div>
       <div class="copy">Here's an overview of my journey to where I am today. I've had the fortune of working with some amazing teams in entrepreneurship, engineering, branding, strategy, and digital services.</div>
-      <div class="node" v-for="node in timeline.list" :key="node">
+      <div class="node" v-for="node in timeline.list" :key="node.company">
         <span class="date"> {{ node.date }} </span>
         <span class="role"> {{ node.role }} </span>
         <a :href="node.link" target="_blank"><span class="company"> {{ node.company }}<span class="location"> {{ node.location }} </span></span></a>

@@ -23,7 +23,7 @@
       </div>
       <div class="project-image">
         <a :href="p.link" target="blank">
-          <img class="cursor-pointer" :src="p.image" />
+          <img class="cursor-pointer" :src="p.image" :alt="p.name"/>
         </a>
       </div>
     </div>
